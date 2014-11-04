@@ -28,7 +28,18 @@ public class Stack {
 	};
 	
 	public void push(int item){
+		// create a new stack with an additional space
+		int[] newStack = new int[this.theStack.length + 1];
+		// copy old stack to new one, with 'top' space left blank
+		int newStackCount = 1;
+		for(int i = 0; i < this.theStack.length; i++){
+			newStack[newStackCount] = this.theStack[i];
+			newStackCount++;
+		}
+		// put the new 'item' in the 'top' space
+		newStack[0] = item;
 		
+		this.theStack = newStack;
 	};
 	
 	public int pop(){
