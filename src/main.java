@@ -21,6 +21,9 @@ public class main {
 		System.out.println("numbered Stack...");
 		myStack.numberStack();
 		myStack.printStack();
+		
+		EulerProblem x = new EulerProblem(1);
+		x.problemOne();
 	}
 
 }

@@ -86,6 +86,20 @@ public class Stack {
 		return hold;
 	};
 	
+	// expands the current stack by the number entered
+	public void expandStack(int expansion){
+		if(this.expandable){
+			// do the expansion
+		}else{
+			System.out.println("ERROR: stack must be expandable. Try running Stack.makeExpandable();");
+		}
+	};
+	
+	// turns a non-expandable stack into an expandable one
+	public void makeExpandable(){
+		this.expandable = true;
+	};
+	
 	/* Loops stack and prints each entry on a new line -- for debugging purposes */
 	public void printStack(){
 		System.out.println("printing Stack...");
