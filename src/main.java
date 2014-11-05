@@ -1,4 +1,6 @@
-
+/*
+ * 2-d arrays, nested for loop, getters/setters, constructors, customer list, record object, get/setAccountBalance
+ * */
 public class main {
 
 	public static void main(String[] args) {
