@@ -15,7 +15,6 @@ public class EulerProblem {
 		// use 'entry' to look up which EulerProblem should be returned
 	};
 	
-	// 
 	/* Problem 1
 	 * 
 	 * if we list all the natural numbers below 10 that are multiples of 3 or 5: 3, 5, 6, 9
@@ -44,4 +43,8 @@ public class EulerProblem {
 		for(int i = 0; i < )*/
 	};
 
+	/* Problem 2
+	 * 
+	 * 
+	 * */
 }
