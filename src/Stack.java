@@ -1,5 +1,7 @@
 /* Stack -- a class providing a simple example of the "stack" data structure 
- * --utilizes only int data types, this is NOT a generic stack structure!!!
+ * -- utilizes only int data types, this is NOT a generic stack structure!!!
+ * -- a stack is a LIFO (Last In, First Out) data structure, or "The last to get in is the first to get out."
+ * -- Think: stacking plates
  * */
 public class Stack {
 	int[] theStack;

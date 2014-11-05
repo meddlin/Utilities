@@ -1,5 +1,7 @@
-/* Stack -- a class providing a simple example of the "stack" data structure 
- * --utilizes only int data types, this is NOT a generic stack structure!!!
+/* Queue -- a class providing a simple example of the "queue" data structure 
+ * -- utilizes only int data types, this is NOT a generic queue structure!!!
+ * -- a queue is a FIFO (First In, First Out) data structure, or "The first to get in is the first to get out."
+ * -- Think: waiting in line
  * */
 public class Queue {
 	int[] queue;
