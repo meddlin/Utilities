@@ -1,5 +1,7 @@
 /* Factorial -- an iterative and recursive method for finding the factorial of a number
  * -- only using int datatypes
+ * -- albeit using a whole class to find a factorial is overkill and calls for some strange use, but building it this way allows for a more important level of separation
+ * --   which is more important for this review
  * */
 public class Factorial {
 
