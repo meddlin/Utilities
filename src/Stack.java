@@ -91,21 +91,21 @@ public class Stack {
 		return theStack.length;
 	};
 	
-	/* Pushes a new value onto the stack. The resulting stack has 1 more space. */
+	/* Pushes a new value onto the stack. */
 	public void push(int item){
-		int[] newStack = new int[this.theStack.length + 1]; // create a new stack with an additional space
-		
-		int newStackCount = 1; // copy old stack to new one, with 'top' space left blank
-		for(int i = 0; i < this.theStack.length; i++){
-			newStack[newStackCount] = this.theStack[i];
-			newStackCount++;
-		}
-		
-		newStack[0] = item; // put the new 'item' in the 'top' space
-		this.theStack = newStack;
+		if(isStackFull()){
+			System.out.println("ERROR: can't push to full stack! can't return because void method signature!");
+		}else{
+			int lastIndex = getIndexOfLastValue();
+			for(int i = lastIndex; i > 0; i--){
+				this.theStack[i + 1] = this.theStack[i];
+				this.theStack[i] = 9999;
+			};
+			this.theStack[0] = item;
+		};
 	};
 	
-	/* Pops a value from the stack. The resulting stack has 1 less space. */
+	/* Pops a value from the stack. */
 	public int pop(){
 		int hold;
 		if(this.isStackEmpty()){
@@ -113,11 +113,11 @@ public class Stack {
 		}else{
 			hold = this.theStack[0]; // grab the 'top'
 			this.theStack[0] = 9999;
-			for(int i = 0; i < (this.theStack.length - 1); i++){
+			for(int i = 1; i < (this.theStack.length - 1); i++){
 				this.theStack[i - 1] = this.theStack[i];
 				this.theStack[i] = 9999;
 			}
-		};		
+		};
 		return hold;
 	};
 	
@@ -149,5 +149,22 @@ public class Stack {
 		for(int i = 0; i < this.theStack.length; i++){
 			this.theStack[i] = i;
 		}
+	};
+	
+	// Find the index of the last value before the empty values. Assumes stack is not corrupted.
+	private int getIndexOfLastValue(){
+		int index = this.theStack.length - 1;
+		for(int i = 0; i < (this.theStack.length - 1); i++){
+			if(this.theStack[i] == 9999){
+				index = i;
+				break;
+			}
+		};
+		return index;
+	};
+	
+	// Finds the value of the spot in the stack before the empty values begin. Assumes stack is not corrupted.
+	private int getLastValue(){
+		return this.theStack[getIndexOfLastValue()];
 	};
 }
