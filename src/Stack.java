@@ -21,10 +21,17 @@ public class Stack {
 		this.theStack = theStack;
 	}
 	
+	public boolean isExpandable() {
+		return expandable;
+	}
+
+	public void setExpandable(boolean expandable) {
+		this.expandable = expandable;
+	}
+	
 	/* CONSTRUCTORS */
 	// options: standard/custom length | expand/non-expand | numbered/not-numbered
-	
-	
+
 	// this should be a non-expandable Stack
 	// create a non-expandable Stack of standard length
 	public Stack(){
@@ -164,7 +171,7 @@ public class Stack {
 	};
 	
 	// Finds the value of the spot in the stack before the empty values begin. Assumes stack is not corrupted.
-	private int getLastValue(){
+	public int getLastValue(){
 		return this.theStack[getIndexOfLastValue()];
 	};
 }
