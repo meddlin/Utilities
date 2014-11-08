@@ -9,6 +9,8 @@ public class Factorial {
 	private int factorialValue;
 	
 	/* CONSTRUCTORS */
+	public Factorial(){}
+	
 	public Factorial(int x){
 		this.value = x;
 	}
@@ -60,4 +62,14 @@ public class Factorial {
 			return recursive(input * recursive(input - 1));
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Factorial [value=" + value + ", factorialValue="
+				+ factorialValue + ", getValue()=" + getValue()
+				+ ", getFactorialValue()=" + getFactorialValue()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+	
 }
