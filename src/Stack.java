@@ -75,6 +75,16 @@ public class Stack {
 		return full;
 	};
 	
+	public boolean isStackEmpty(){
+		boolean empty = true;
+		for(int i = 0; i < this.theStack.length; i++){
+			if(this.theStack[i] != 9999){
+				empty = false;
+			}
+		}
+		return empty;
+	};
+	
 	public int getLength(){
 		return theStack.length;
 	};
@@ -95,9 +105,14 @@ public class Stack {
 	
 	/* Pops a value from the stack. The resulting stack has 1 less space. */
 	public int pop(){
-		int hold = this.theStack[0]; // grab the 'top'  
 		
-		// create a new stack with one less space
+		
+		
+		int hold = this.theStack[0]; // grab the 'top'
+		
+		
+		
+		/*// create a new stack with one less space
 		int[] newStack = new int[this.theStack.length - 1];
 		
 		// copy old stack to new one, with [1] index now at the [0] index
@@ -106,7 +121,7 @@ public class Stack {
 			newStack[newStackCount] = this.theStack[i];
 			newStackCount++;
 		}
-		this.theStack = newStack;
+		this.theStack = newStack;*/
 		
 		return hold;
 	};

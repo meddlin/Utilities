@@ -39,6 +39,20 @@ public class Queue {
 		return full;
 	};
 	
+	public boolean isQueueEmpty(){
+		boolean empty = true;
+		for(int i = 0; i < this.queue.length; i++){
+			if(this.queue[i] != 9999){
+				empty = false;
+			}
+		}
+		return empty;
+	};
+	
+	public int getLength(){
+		return this.queue.length;
+	};
+	
 	public void enqueue(int item){
 		
 	};
