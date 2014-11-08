@@ -2,6 +2,9 @@
  * -- utilizes only int data types, this is NOT a generic stack structure!!!
  * -- a stack is a LIFO (Last In, First Out) data structure, or "The last to get in is the first to get out."
  * -- Think: stacking plates
+ * -- 
+ * -- NOTE: the value "9999" will stand for "empty" for any particular index of a stack. I don't want to bother with "null" values, and the potential
+ * --  complications that could introduce, but I also would like to allow for flexibility to have 0, -0, +0 values.
  * */
 public class Stack {
 	int[] theStack;
@@ -62,6 +65,16 @@ public class Stack {
 	
 	
 	/* CLASS METHODS */
+	public boolean isStackFull(){
+		boolean full = true;
+		for(int i = 0; i < this.theStack.length; i++){
+			if(this.theStack[i] == 9999){
+				return false;
+			}
+		}
+		return full;
+	};
+	
 	public int getLength(){
 		return theStack.length;
 	};
