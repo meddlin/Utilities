@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /* Stack -- a class providing a simple example of the "stack" data structure 
  * -- utilizes only int data types, this is NOT a generic stack structure!!!
  * -- a stack is a LIFO (Last In, First Out) data structure, or "The last to get in is the first to get out."
@@ -173,5 +175,19 @@ public class Stack {
 	// Finds the value of the spot in the stack before the empty values begin. Assumes stack is not corrupted.
 	public int getLastValue(){
 		return this.theStack[getIndexOfLastValue()];
+	}
+
+	@Override
+	public String toString() {
+		return "Stack [theStack=" + Arrays.toString(theStack) + ", expandable="
+				+ expandable + ", getTheStack()="
+				+ Arrays.toString(getTheStack()) + ", isExpandable()="
+				+ isExpandable() + ", isStackFull()=" + isStackFull()
+				+ ", isStackEmpty()=" + isStackEmpty() + ", getLength()="
+				+ getLength() + ", pop()=" + pop() + ", getIndexOfLastValue()="
+				+ getIndexOfLastValue() + ", getLastValue()=" + getLastValue()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
 	};
+	
 }

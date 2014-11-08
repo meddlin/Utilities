@@ -15,6 +15,13 @@ public class EulerProblem {
 		// use 'entry' to look up which EulerProblem should be returned
 	};
 	
+	
+	@Override
+	public String toString() {
+		return "EulerProblem [getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + ", toString()=" + super.toString() + "]";
+	}
+
 	/* Problem 1
 	 * 
 	 * if we list all the natural numbers below 10 that are multiples of 3 or 5: 3, 5, 6, 9

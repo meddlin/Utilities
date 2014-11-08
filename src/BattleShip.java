@@ -35,4 +35,13 @@ public class BattleShip {
 		player2.resetBoard(player2.getShipWatch());
 		player2.resetBoard(player2.getEnemyWatch());
 	}
+
+	@Override
+	public String toString() {
+		return "BattleShip [player1=" + player1 + ", player2=" + player2
+				+ ", getPlayer1()=" + getPlayer1() + ", getPlayer2()="
+				+ getPlayer2() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + ", toString()=" + super.toString() + "]";
+	}
+	
 }

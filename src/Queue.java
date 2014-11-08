@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /* Queue -- a class providing a simple example of the "queue" data structure 
  * -- utilizes only int data types, this is NOT a generic queue structure!!!
  * -- a queue is a FIFO (First In, First Out) data structure, or "The first to get in is the first to get out."
@@ -90,5 +92,19 @@ public class Queue {
 	
 	public int getLastValue(){
 		return this.queue[getIndexOfLastValue()];
+	}
+
+	@Override
+	public String toString() {
+		return "Queue [queue=" + Arrays.toString(queue) + ", expandable="
+				+ expandable + ", getQueue()=" + Arrays.toString(getQueue())
+				+ ", isExpandable()=" + isExpandable() + ", isQueueFull()="
+				+ isQueueFull() + ", isQueueEmpty()=" + isQueueEmpty()
+				+ ", getLength()=" + getLength() + ", dequeue()=" + dequeue()
+				+ ", getIndexOfLastValue()=" + getIndexOfLastValue()
+				+ ", getLastValue()=" + getLastValue() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
 	};
+	
 }

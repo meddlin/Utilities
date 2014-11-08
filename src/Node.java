@@ -37,4 +37,14 @@ public class Node {
 		this.payload = payload;
 	}
 
+	/* CLASS METHODS */
+	@Override
+	public String toString() {
+		return "Node [ID=" + ID + ", payload=" + payload + ", getID()="
+				+ getID() + ", getPayload()=" + getPayload() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + ", toString()="
+				+ super.toString() + "]";
+	}
+	
+	
 }

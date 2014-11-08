@@ -13,5 +13,8 @@ public class NBlock {
 
 	
 	// the diagonal of an array is [0][0], [1][1], [2][2], ...
+	public void printDiagonal(){
+		
+	};
 	
 }

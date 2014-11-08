@@ -6,12 +6,14 @@
 public class Ship {
 	private int health;
 	
+	/* CONSTRUCTORS */
 	public Ship(){};
 	
 	public Ship(int hp){
 		this.setHealth(hp);
 	};
 
+	/* GETTERS & SETTERS */
 	public int getHealth() {
 		return health;
 	}
@@ -20,7 +22,17 @@ public class Ship {
 		this.health = health;
 	}
 	
+	/* CLASS METHODS */
 	public void hit(){
 		this.setHealth(this.getHealth() - 1);
 	}
+
+	@Override
+	public String toString() {
+		return "Ship [health=" + health + ", getHealth()=" + getHealth()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+	
+	
 }
