@@ -3,8 +3,10 @@
  * -- a queue is a FIFO (First In, First Out) data structure, or "The first to get in is the first to get out."
  * -- Think: waiting in line
  * -- 
- * -- NOTE: the value "9999" will stand for "empty" for any particular index of a stack. I don't want to bother with "null" values, and the potential
- * --  complications that could introduce, but I also would like to allow for flexibility to have 0, -0, +0 values.
+ * -- NOTE: the value (int)"9999" will stand for "empty" for any particular index of a stack. I don't want to bother with "null" values, and the potential
+ * --        complications that could introduce, but I also would like to allow for flexibility to have 0, -0, +0 values.
+ * --       the value (int)"9998" denotes an ERROR. There are some methods which need to return an int or an error. In order to avoid try/catch() blocks
+ * --        or creating a special object, we'll just have an error value.
  * */
 public class Queue {
 	int[] queue;

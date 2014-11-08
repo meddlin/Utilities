@@ -3,8 +3,10 @@
  * -- a stack is a LIFO (Last In, First Out) data structure, or "The last to get in is the first to get out."
  * -- Think: stacking plates
  * -- 
- * -- NOTE: the value "9999" will stand for "empty" for any particular index of a stack. I don't want to bother with "null" values, and the potential
- * --  complications that could introduce, but I also would like to allow for flexibility to have 0, -0, +0 values.
+ * -- NOTE: the value (int)"9999" will stand for "empty" for any particular index of a stack. I don't want to bother with "null" values, and the potential
+ * --        complications that could introduce, but I also would like to allow for flexibility to have 0, -0, +0 values.
+ * --       the value (int)"9998" denotes an ERROR. There are some methods which need to return an int or an error. In order to avoid try/catch() blocks
+ * --        or creating a special object, we'll just have an error value.  
  * */
 public class Stack {
 	int[] theStack;
@@ -105,24 +107,17 @@ public class Stack {
 	
 	/* Pops a value from the stack. The resulting stack has 1 less space. */
 	public int pop(){
-		
-		
-		
-		int hold = this.theStack[0]; // grab the 'top'
-		
-		
-		
-		/*// create a new stack with one less space
-		int[] newStack = new int[this.theStack.length - 1];
-		
-		// copy old stack to new one, with [1] index now at the [0] index
-		int newStackCount = 0;
-		for(int i = 1; i < this.theStack.length; i++){
-			newStack[newStackCount] = this.theStack[i];
-			newStackCount++;
-		}
-		this.theStack = newStack;*/
-		
+		int hold;
+		if(this.isStackEmpty()){
+			hold = 9998;
+		}else{
+			hold = this.theStack[0]; // grab the 'top'
+			this.theStack[0] = 9999;
+			for(int i = 0; i < (this.theStack.length - 1); i++){
+				this.theStack[i - 1] = this.theStack[i];
+				this.theStack[i] = 9999;
+			}
+		};		
 		return hold;
 	};
 	
