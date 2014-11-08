@@ -27,23 +27,33 @@ public class Stack {
 		expandable = false;
 	};
 	
+	public Stack(int[] custom){
+		this.theStack = custom;
+		this.expandable = false;
+	};
+	
+	public Stack(int[] custom, boolean expand){
+		this.theStack = custom;
+		this.expandable = expand;
+	};
+	
 	// this should be a non-expandable Stack
 	//create a non-expandable Stack of standard length
 	public Stack(int x){
-		theStack = new int[x];
-		expandable = false;
+		this.theStack = new int[x];
+		this.expandable = false;
 	};
 	
 	/* Create a stack of standard length, and number it */
 	public Stack(boolean number){
-		theStack = new int[10];
-		numberStack();
+		this.theStack = new int[10];
+		this.numberStack();
 	};
 	
 	/* Create a stack of custom length, and number it */
 	public Stack(int x, boolean number){
-		theStack = new int[x];
-		numberStack();
+		this.theStack = new int[x];
+		this.numberStack();
 	};
 	
 	/* Create an expandable Stack, of standard length */
