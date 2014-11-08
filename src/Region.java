@@ -3,7 +3,9 @@ public class Region {
 	private Coordinate coordinate;
 	private boolean hit;
 	private boolean ship;
+	private String shipCode;
 
+	/* CONSTRUCTORS */
 	public Region(){
 		this.coordinate = new Coordinate();
 		this.hit = false;
@@ -33,7 +35,15 @@ public class Region {
 		this.hit = hitValue;
 		this.ship = shipValue;
 	}
+	
+	public Region(Coordinate location, boolean hitValue, boolean shipValue, String shipCode){
+		this.coordinate = location;
+		this.hit = hitValue;
+		this.ship = shipValue;
+		this.shipCode = shipCode;
+	}
 
+	/* GETTERS & SETTERS */
 	public Coordinate getCoordinate() {
 		return coordinate;
 	}
@@ -58,11 +68,28 @@ public class Region {
 		this.ship = ship;
 	}
 
+	public String getShipCode() {
+		return shipCode;
+	}
+
+	public void setShipCode(String shipCode) {
+		this.shipCode = shipCode;
+	}
+
+	/* CLASS METHODS */
 	@Override
 	public String toString() {
 		return "Region [coordinate=" + coordinate + ", hit=" + hit + ", ship="
 				+ ship + "]";
 	};
 	
+	public void drawRegion(){
+		if( (getCoordinate() != null) && (getShipCode() != null) ){
+			//draw
+		}else{
+			System.out.println("ERROR: Region not ready for drawing.");
+			toString();
+		}
+	}
 	
 }

@@ -19,4 +19,8 @@ public class Ship {
 	public void setHealth(int health) {
 		this.health = health;
 	}
+	
+	public void hit(){
+		this.setHealth(this.getHealth() - 1);
+	}
 }
