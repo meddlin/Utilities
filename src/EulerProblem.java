@@ -31,7 +31,7 @@ public class EulerProblem {
 	 * Personal Bonus: print their sum
 	 * */
 	public void problemOne(){
-		ArrayList answers = new ArrayList(1);
+		ArrayList<Integer> answers = new ArrayList<Integer>(1);
 		
 		for(int i = 1; i < 1001; i++){
 			if (i % 3 == 0){
