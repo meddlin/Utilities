@@ -14,6 +14,18 @@ public class Queue {
 	int[] queue;
 	boolean expandable;
 	
+/* CONSTRUCTORS */
+	
+	// create standard Queue. standard length, non-expandable.
+	public Queue(){
+		queue = new int[10];
+	};
+	
+	// create custom length Queue. non-expandable.
+	public Queue(int x){
+		queue = new int[x];
+	};
+	
 	/* GETTERS & SETTERS */
 	public int[] getQueue() {
 		return queue;
@@ -30,18 +42,6 @@ public class Queue {
 	public void setExpandable(boolean expandable) {
 		this.expandable = expandable;
 	}
-
-	/* CONSTRUCTORS */
-	
-	// create standard Queue. standard length, non-expandable.
-	public Queue(){
-		queue = new int[10];
-	};
-	
-	// create custom length Queue. non-expandable.
-	public Queue(int x){
-		queue = new int[x];
-	};
 	
 	/* CLASS METHODS */
 	
@@ -83,11 +83,25 @@ public class Queue {
 	};
 	
 	public int dequeue(){
-		return 0;
+		int hold = 9998;
+		if(isQueueEmpty()){
+			System.out.println("ERROR: queue is empty, can't dequeue() an empty queue");
+		}else{
+			hold = this.queue[getIndexOfLastValue()];
+			this.queue[getIndexOfLastValue()] = 9999;
+		}
+		return hold;
 	};
 	
 	private int getIndexOfLastValue(){
-		return 0;
+		int index = this.queue.length - 1;
+		for(int i = 0; i < (this.queue.length - 1); i++){
+			if(this.queue[i] == 9999){
+				index = i;
+				break;
+			}
+		}
+		return index;
 	};
 	
 	public int getLastValue(){
