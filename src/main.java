@@ -26,6 +26,9 @@ public class main {
 		
 		EulerProblem x = new EulerProblem(1);
 		x.problemOne();
+		
+		ChopShop st1 = new ChopShop();
+		st1.findAllVowels("Does this string have any vowels?");
 	}
 
 }
