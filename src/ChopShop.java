@@ -52,9 +52,14 @@ public class ChopShop {
 		case 'e': return true;
 		case 'i': return true;
 		case 'o': return true;
-		case 'y': return true;
+		case 'u': return true;
 		default: return false;
 		}
+	};
+	
+	//don't throw digits, punctuation in here
+	public boolean isConsonant(char x){
+		return !isVowel(x);
 	};
 	
 }

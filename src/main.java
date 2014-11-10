@@ -6,7 +6,7 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		//test the Stack class
+		/*//test the Stack class
 		Stack myStack = new Stack(5);
 		System.out.println("After creating Stack...");
 		myStack.printStack();
@@ -28,7 +28,11 @@ public class main {
 		x.problemOne();
 		
 		ChopShop st1 = new ChopShop();
-		st1.findAllVowels("Does this string have any vowels?");
+		st1.findAllVowels("Does this string have any vowels?");*/
+		
+		LinkedList myList = new LinkedList();
+		//System.out.println(myList.toString());
+		myList.printList();
 	}
 
 }

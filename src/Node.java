@@ -7,7 +7,7 @@ public class Node {
 	
 	// generates and empty Node
 	public Node(){
-		this.setID(99);
+		this.setID(99); //99 is 'empty' value
 		this.setPayload("");
 	};
 	
