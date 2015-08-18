@@ -15,14 +15,14 @@ public class main {
 		System.out.println("After pushing 100 to stack...");
 		myStack.printStack();
 		
-		int hold = myStack.pop();
+		/*int hold = myStack.pop();
 		System.out.println("After popping 100 from stack...");
 		myStack.printStack();
 		System.out.println("hold: " + hold);
 		
 		System.out.println("numbered Stack...");
 		myStack.numberStack();
-		myStack.printStack();
+		myStack.printStack();*/
 		
 		/*EulerProblem x = new EulerProblem(1);
 		x.problemOne();*/

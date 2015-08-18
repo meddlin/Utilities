@@ -12,50 +12,23 @@ import java.util.Arrays;
  * */
 public class Stack {
 	int[] theStack;
-	boolean expandable;
 	
-	/* GETTERS & SETTERS */
-	public int[] getTheStack() {
-		return theStack;
-	}
 
-	public void setTheStack(int[] theStack) {
-		this.theStack = theStack;
-	}
-	
-	public boolean isExpandable() {
-		return expandable;
-	}
-
-	public void setExpandable(boolean expandable) {
-		this.expandable = expandable;
-	}
-	
 	/* CONSTRUCTORS */
-	// options: standard/custom length | expand/non-expand | numbered/not-numbered
+	// options: standard/custom length | non-expand | numbered/not-numbered
 
-	// this should be a non-expandable Stack
-	// create a non-expandable Stack of standard length
+ 	// create a Stack of standard length
 	public Stack(){
 		theStack = new int[10];
-		expandable = false;
 	};
 	
 	public Stack(int[] custom){
 		this.theStack = custom;
-		this.expandable = false;
 	};
 	
-	public Stack(int[] custom, boolean expand){
-		this.theStack = custom;
-		this.expandable = expand;
-	};
-	
-	// this should be a non-expandable Stack
-	//create a non-expandable Stack of standard length
+	//create a Stack of standard length
 	public Stack(int x){
 		this.theStack = new int[x];
-		this.expandable = false;
 	};
 	
 	/* Create a stack of standard length, and number it */
@@ -69,10 +42,21 @@ public class Stack {
 		this.theStack = new int[x];
 		this.numberStack();
 	};
+
+	/* END : CONSTRUCTORS */
+
+
+	/* GETTERS & SETTERS */
+	public int[] getTheStack() {
+		return theStack;
+	}
+
+	public void setTheStack(int[] theStack) {
+		this.theStack = theStack;
+	}
+	/* END : GETTERS & SETTERS */
 	
-	/* Create an expandable Stack, of standard length */
 	
-	/* Create an expandable Stack, of custom length, and number it */
 	
 	
 	/* CLASS METHODS */
@@ -104,7 +88,7 @@ public class Stack {
 	public void push(int item){
 		if(isStackFull()){
 			System.out.println("ERROR: can't push to full stack! can't return because void method signature!");
-		}else{
+		} else {
 			int lastIndex = getIndexOfLastValue();
 			for(int i = lastIndex; i > 0; i--){
 				this.theStack[i + 1] = this.theStack[i];
@@ -128,20 +112,6 @@ public class Stack {
 			}
 		};
 		return hold;
-	};
-	
-	// expands the current stack by the number entered
-	public void expandStack(int expansion){
-		if(this.expandable){
-			// do the expansion
-		}else{
-			System.out.println("ERROR: stack must be expandable. Try running Stack.makeExpandable();");
-		}
-	};
-	
-	// turns a non-expandable stack into an expandable one
-	public void makeExpandable(){
-		this.expandable = true;
 	};
 	
 	/* Loops stack and prints each entry on a new line -- for debugging purposes */
@@ -179,10 +149,8 @@ public class Stack {
 
 	@Override
 	public String toString() {
-		return "Stack [theStack=" + Arrays.toString(theStack) + ", expandable="
-				+ expandable + ", getTheStack()="
-				+ Arrays.toString(getTheStack()) + ", isExpandable()="
-				+ isExpandable() + ", isStackFull()=" + isStackFull()
+		return "Stack [theStack=" + Arrays.toString(theStack) + ", getTheStack()="
+				+ Arrays.toString(getTheStack()) + ", isStackFull()=" + isStackFull()
 				+ ", isStackEmpty()=" + isStackEmpty() + ", getLength()="
 				+ getLength() + ", pop()=" + pop() + ", getIndexOfLastValue()="
 				+ getIndexOfLastValue() + ", getLastValue()=" + getLastValue()
